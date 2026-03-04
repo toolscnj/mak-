@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CNJ Digital — Email Signatures</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    h1 { text-align: center; font-size: 20px; color: #111; margin: 0 0 8px; }
+    .subtitle { text-align: center; font-size: 13px; color: #888; margin: 0 0 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 24px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .card-header { font-size: 15px; font-weight: bold; color: #111; margin-bottom: 2px; }
+    .card-role { font-size: 12px; color: #888; margin-bottom: 16px; }
+
+    .sig-section-label {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #aaa;
+      margin: 0 0 8px;
+    }
+    .sig-divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 16px 0;
+    }
+    .sig-preview { margin-bottom: 10px; }
+
+    .reply-preview {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 9px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 4px;
+    }
+    .btn:hover { background: #333; }
+    .btn-reply {
+      background: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+    }
+    .btn-reply:hover { background: #f5f5f5; }
+    .copied-msg { display: none; text-align: center; margin-bottom: 4px; color: green; font-size: 11px; }
+  </style>
+</head>
+<body>
+
+<h1>CNJ Digital — Email Signatures</h1>
+<p class="subtitle">Each person has a full signature (new emails) and a short reply version.</p>
+
+<!-- INSTRUCTIONS -->
+<div style="max-width:860px;margin:0 auto 48px;background:#fff;border-radius:16px;padding:32px 36px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+  <h2 style="margin:0 0 24px;font-size:17px;color:#111;">How to set up your Gmail signature</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+    <div style="border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;">
+      <div style="background:#f7f7f7;padding:14px 18px;border-bottom:1px solid #e8e8e8;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#000;color:#fff;border-radius:50%;font-size:12px;font-weight:bold;margin-right:8px;">1</span>
+        <strong style="font-size:13px;">Open Gmail Settings</strong>
+      </div>
+      <div style="padding:18px;">
+        <p style="margin:0 0 12px;font-size:13px;color:#444;">Click the <strong>⚙️ gear icon</strong> in the top-right corner of Gmail, then click <strong>"See all settings"</strong>.</p>
+        <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;font-size:12px;">
+          <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #eee;">
+            <span style="font-size:10px;color:#888;">Gmail toolbar →</span>
+            <span style="background:#f1f3f4;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #000;">⚙️</span>
+          </div>
+          <div style="background:#fff;border:1px solid #ddd;border-radius:6px;padding:10px;width:180px;margin-left:auto;">
+            <div style="font-weight:bold;font-size:12px;margin-bottom:8px;">Quick settings</div>
+            <div style="background:#1a73e8;color:#fff;text-align:center;padding:7px 10px;border-radius:20px;font-size:12px;font-weight:bold;">See all settings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;">
+      <div style="background:#f7f7f7;padding:14px 18px;border-bottom:1px solid #e8e8e8;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#000;color:#fff;border-radius:50%;font-size:12px;font-weight:bold;margin-right:8px;">2</span>
+        <strong style="font-size:13px;">Create two signatures</strong>
+      </div>
+      <div style="padding:18px;">
+        <p style="margin:0 0 12px;font-size:13px;color:#444;">In the <strong>General</strong> tab, scroll to <strong>Signature</strong>. Click <strong>"+ Create new"</strong> twice and name them exactly:</p>
+        <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;font-size:12px;">
+          <div style="display:flex;align-items:center;gap:8px;padding:7px 8px;border:1px solid #000;border-radius:4px;margin-bottom:6px;">
+            <span style="font-size:16px;">✉️</span>
+            <div><div style="font-weight:bold;font-size:11px;">CNJ full</div><div style="color:#888;font-size:10px;">Used for new emails you send</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:7px 8px;border:1px solid #ccc;border-radius:4px;">
+            <span style="font-size:16px;">↩️</span>
+            <div><div style="font-weight:bold;font-size:11px;">CNJ reply</div><div style="color:#888;font-size:10px;">Used when replying or forwarding</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;">
+      <div style="background:#f7f7f7;padding:14px 18px;border-bottom:1px solid #e8e8e8;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#000;color:#fff;border-radius:50%;font-size:12px;font-weight:bold;margin-right:8px;">3</span>
+        <strong style="font-size:13px;">Paste each signature</strong>
+      </div>
+      <div style="padding:18px;">
+        <p style="margin:0 0 8px;font-size:13px;color:#444;">For each signature: select its name on the left → click inside the editor → paste with <strong>Cmd+V</strong> (Mac) or <strong>Ctrl+V</strong> (Windows).</p>
+        <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:6px;padding:8px 10px;font-size:11px;color:#7a5800;">
+          <strong>✉️ CNJ full</strong> → paste the <em>full</em> signature (black button below)<br>
+          <strong>↩️ CNJ reply</strong> → paste the <em>short reply</em> version (white button below)
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;">
+      <div style="background:#f7f7f7;padding:14px 18px;border-bottom:1px solid #e8e8e8;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#000;color:#fff;border-radius:50%;font-size:12px;font-weight:bold;margin-right:8px;">4</span>
+        <strong style="font-size:13px;">Set defaults & save</strong>
+      </div>
+      <div style="padding:18px;">
+        <p style="margin:0 0 10px;font-size:13px;color:#444;">Scroll to <strong>Signature defaults</strong> and set:</p>
+        <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px;font-size:11px;margin-bottom:10px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+            <div style="background:#f0f7ff;border:1px solid #bcd;border-radius:6px;padding:8px;">
+              <div style="font-size:10px;color:#555;margin-bottom:4px;font-weight:bold;">✉️ FOR NEW EMAILS USE</div>
+              <div style="border:1px solid #aaa;border-radius:3px;padding:4px 6px;background:#fff;">CNJ full ▾</div>
+              <div style="font-size:10px;color:#888;margin-top:4px;">The full branded signature</div>
+            </div>
+            <div style="background:#f5f5f5;border:1px solid #ddd;border-radius:6px;padding:8px;">
+              <div style="font-size:10px;color:#555;margin-bottom:4px;font-weight:bold;">↩️ ON REPLY/FORWARD USE</div>
+              <div style="border:1px solid #aaa;border-radius:3px;padding:4px 6px;background:#fff;">CNJ reply ▾</div>
+              <div style="font-size:10px;color:#888;margin-top:4px;">The short text-only version</div>
+            </div>
+          </div>
+          <div style="background:#1a73e8;color:#fff;text-align:center;padding:7px;border-radius:4px;font-weight:bold;font-size:12px;">Save Changes</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- ═══ MAK ═══ -->
+  <div class="card">
+    <div class="card-header">Mak Kordić</div>
+    <div class="card-role">CEO</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-mak">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Mak Kordić,</strong>&nbsp;CEO</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <a href="tel:+38651336686" style="color:#575757;text-decoration:none;">+386 51 336 686</a><br>
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('mak')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-mak">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-mak">
+      <strong>Mak Kordić,</strong> CEO<br>
+      <a href="tel:+38651336686" style="color:#333;text-decoration:none;">+386 51 336 686</a><br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-mak')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-mak">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ DORIS ═══ -->
+  <div class="card">
+    <div class="card-header">Doris Kordić</div>
+    <div class="card-role">Project Manager</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-doris">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Doris Kordić,</strong>&nbsp;Project Manager</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <a href="tel:+38640511514" style="color:#575757;text-decoration:none;">+386 40 511 514</a><br>
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('doris')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-doris">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-doris">
+      <strong>Doris Kordić,</strong> Project Manager<br>
+      <a href="tel:+38640511514" style="color:#333;text-decoration:none;">+386 40 511 514</a><br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-doris')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-doris">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ BLAŽ ═══ -->
+  <div class="card">
+    <div class="card-header">Blaž Blažinič</div>
+    <div class="card-role">Account Director</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-blaz">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Blaž Blažinič,</strong>&nbsp;Account Director</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <a href="tel:+38651204549" style="color:#575757;text-decoration:none;">+386 51 204 549</a><br>
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span><br>
+            <span style="font-size:12px;color:#575757;">Book a meeting with me:&nbsp;<a href="https://calendly.com/blaz_cnj" style="color:#0a0a0a;font-weight:bold;" target="_blank">Schedule here</a></span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('blaz')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-blaz">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-blaz">
+      <strong>Blaž Blažinič,</strong> Account Director<br>
+      <a href="tel:+38651204549" style="color:#333;text-decoration:none;">+386 51 204 549</a><br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-blaz')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-blaz">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ MARTIN ═══ -->
+  <div class="card">
+    <div class="card-header">Martin Koterle</div>
+    <div class="card-role">CTO</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-martin">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Martin Koterle,</strong>&nbsp;CTO</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('martin')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-martin">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-martin">
+      <strong>Martin Koterle,</strong> CTO<br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-martin')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-martin">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ JURE ═══ -->
+  <div class="card">
+    <div class="card-header">Jure Kožuh</div>
+    <div class="card-role">Head of UX · NN/g UX Certified (UXC)</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-jure">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 12px;color:#0a0a0a;font-size:16px;line-height:19px;">
+            <strong>Jure Kožuh,</strong>&nbsp;Head of UX<br>
+            <span style="font-size:11px;color:#888888;">NN/g UX Certified (UXC)</span>
+          </td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('jure')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-jure">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-jure">
+      <strong>Jure Kožuh,</strong> Head of UX<br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-jure')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-jure">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ MANUEL ═══ -->
+  <div class="card">
+    <div class="card-header">Manuel Felda</div>
+    <div class="card-role">Senior Developer</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-manuel">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Manuel Felda,</strong>&nbsp;Senior Developer</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('manuel')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-manuel">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-manuel">
+      <strong>Manuel Felda,</strong> Senior Developer<br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-manuel')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-manuel">✓ Copied!</div>
+  </div>
+
+  <!-- ═══ RIKARDO ═══ -->
+  <div class="card">
+    <div class="card-header">Rikardo Komen</div>
+    <div class="card-role">Senior Developer</div>
+
+    <div class="sig-section-label">✉️ Full signature — paste into "CNJ full"</div>
+    <div class="sig-preview"><div id="sig-rikardo">
+      <div style="border-radius:20px;overflow:hidden;width:322px;font-family:Helvetica,Arial,sans-serif;background-color:#ebebeb;">
+        <table cellpadding="0" cellspacing="0" border="0" width="322" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;"><tbody>
+          <tr><td style="padding:20px 16px 16px;color:#0a0a0a;font-size:16px;line-height:19px;"><strong>Rikardo Komen,</strong>&nbsp;Senior Developer</td></tr>
+          <tr><td style="padding:0 16px 6px;"><img src="https://www.cnj.si/email/lines@2x.png" alt="" width="91" height="15" style="display:block;border:0;"></td></tr>
+          <tr><td style="padding:0 16px 16px;font-size:16px;color:#575757;line-height:19px;">
+            <span style="color:#222222;font-size:12px;">Dunajska cesta 47, Ljubljana, Slovenia</span>
+          </td></tr>
+          <tr><td style="padding:16px;background-color:#000000;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tbody><tr>
+              <td style="padding:0;vertical-align:middle;"><a href="https://www.cnj.si" target="_blank"><img src="https://www.cnj.si/email/cnj-logo.jpg" alt="CNJ.si" width="63" height="34" style="display:block;border:0;"></a></td>
+              <td style="padding:0;text-align:right;vertical-align:middle;">
+                <a href="https://www.linkedin.com/company/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/linkedin.jpg" alt="LinkedIn" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.facebook.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/facebook.jpg" alt="Facebook" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>&nbsp;<a href="https://www.instagram.com/cnjdigital/" target="_blank" style="display:inline-block;vertical-align:middle;"><img src="https://www.cnj.si/email/instagram.jpg" alt="Instagram" width="34" height="34" style="display:block;border-radius:50%;border:0;"></a>
+              </td>
+            </tr></tbody></table>
+          </td></tr>
+        </tbody></table>
+      </div>
+    </div></div>
+    <button class="btn" onclick="copySig('rikardo')">Copy Full Signature</button>
+    <div class="copied-msg" id="msg-rikardo">✓ Copied!</div>
+
+    <hr class="sig-divider">
+
+    <div class="sig-section-label">↩️ Reply signature — paste into "CNJ reply"</div>
+    <div class="reply-preview" id="reply-rikardo">
+      <strong>Rikardo Komen,</strong> Senior Developer<br>
+      <a href="https://www.cnj.si" style="color:#333;text-decoration:none;">cnj.si</a>
+    </div>
+    <button class="btn btn-reply" onclick="copySig('reply-rikardo')">Copy Reply Signature</button>
+    <div class="copied-msg" id="msg-reply-rikardo">✓ Copied!</div>
+  </div>
+
+</div>
+
+<script>
+  function copySig(id) {
+    const el = document.getElementById((id.startsWith('reply-') ? '' : 'sig-') + id);
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    try {
+      const html = el.innerHTML;
+      const blob = new Blob([html], { type: 'text/html' });
+      const item = new ClipboardItem({ 'text/html': blob });
+      navigator.clipboard.write([item]).then(() => showMsg(id)).catch(() => {
+        document.execCommand('copy'); showMsg(id);
+      });
+    } catch(e) {
+      document.execCommand('copy'); showMsg(id);
+    }
+  }
+  function showMsg(id) {
+    const msg = document.getElementById('msg-' + id);
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2500);
+  }
+</script>
+
+</body>
+</html>
